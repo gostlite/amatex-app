@@ -25,18 +25,18 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             {/* Thumbnails */}
             <div className="flex flex-row lg:flex-col gap-4 overflow-x-auto lg:overflow-y-auto hide-scrollbar lg:w-24 flex-shrink-0">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className={`w-20 lg:w-full aspect-[3/4] bg-gray-100 flex-shrink-0 border-2 cursor-pointer transition-colors ${i === 1 ? 'border-black' : 'border-transparent hover:border-gray-300'}`}>
-                   {/* Thumbnail placeholder */}
+                <div key={i} className={`w-20 lg:w-full aspect-[3/4] bg-gray-100 flex-shrink-0 border-2 cursor-pointer transition-colors ${i === 1 ? 'border-black' : 'border-transparent hover:border-gray-300'} overflow-hidden relative`}>
+                   <img src={product.image} className="absolute inset-0 w-full h-full object-cover" alt="Thumbnail" />
                 </div>
               ))}
             </div>
             
             {/* Main Image */}
-            <div className="w-full aspect-[3/4] bg-gray-100 flex items-center justify-center relative">
-               <div className="text-gray-400 font-bold text-xl tracking-widest uppercase">[ {product.name} ]</div>
+            <div className="w-full aspect-[3/4] bg-gray-100 flex items-center justify-center relative overflow-hidden">
+               <img src={product.image} className="absolute inset-0 w-full h-full object-cover" alt={product.name} />
                
                {product.available < 15 && (
-                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 text-xs font-bold uppercase tracking-widest text-black shadow-sm">
+                  <div className="absolute top-6 left-6 bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-black shadow-sm">
                     Few left ({product.available})
                   </div>
                 )}
@@ -125,11 +125,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div className="bg-gray-50 py-24 border-t border-gray-100">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-black uppercase tracking-tighter text-gray-900 mb-12">More Wholesale Bundles</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-               {/* Just showing placeholders */}
-               <div className="aspect-[3/4] bg-gray-200"></div>
-               <div className="aspect-[3/4] bg-gray-200"></div>
-               <div className="aspect-[3/4] bg-gray-200"></div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+               <div className="aspect-[3/4] bg-gray-200 relative overflow-hidden group block">
+                 <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" alt="Bundle" />
+               </div>
+               <div className="aspect-[3/4] bg-gray-200 relative overflow-hidden group block">
+                 <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" alt="Bundle" />
+               </div>
+               <div className="aspect-[3/4] bg-gray-200 relative overflow-hidden group block">
+                 <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" alt="Bundle" />
+               </div>
             </div>
          </div>
       </div>

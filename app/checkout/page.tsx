@@ -110,7 +110,9 @@ export default function Checkout() {
                 
                 <ul className="divide-y divide-gray-200 mb-6">
                    <li className="py-4 flex">
-                      <div className="w-16 h-20 bg-gray-200 border border-gray-300 flex-shrink-0"></div>
+                      <div className="w-16 h-20 bg-gray-200 border border-gray-300 flex-shrink-0 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Ladies Mixed Bundle" />
+                      </div>
                       <div className="ml-4 flex-1 flex flex-col justify-center">
                          <h3 className="text-sm font-bold uppercase tracking-tight text-gray-900">Ladies Mixed Bundle</h3>
                          <p className="text-xs text-gray-500 mt-1">Qty: 5</p>
@@ -118,7 +120,9 @@ export default function Checkout() {
                       </div>
                    </li>
                    <li className="py-4 flex">
-                      <div className="w-16 h-20 bg-gray-200 border border-gray-300 flex-shrink-0"></div>
+                      <div className="w-16 h-20 bg-gray-200 border border-gray-300 flex-shrink-0 relative overflow-hidden">
+                         <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Men's Bundle" />
+                      </div>
                       <div className="ml-4 flex-1 flex flex-col justify-center">
                          <h3 className="text-sm font-bold uppercase tracking-tight text-gray-900">Men's Bundle</h3>
                          <p className="text-xs text-gray-500 mt-1">Qty: 2</p>

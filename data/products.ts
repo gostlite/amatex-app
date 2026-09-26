@@ -5,7 +5,7 @@ export const products = [
     name: "Ladies Mixed Bundle",
     price: 180000,
     pieces: 24,
-    image: "/images/bundle-1.jpg",
+    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=600&auto=format&fit=crop",
     available: 12,
     features: [
       "Dresses",
@@ -21,7 +21,7 @@ export const products = [
     name: "Men's Bundle",
     price: 240000,
     pieces: 24,
-    image: "/images/bundle-2.jpg",
+    image: "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=600&auto=format&fit=crop",
     available: 14,
     features: [
       "T-shirts",
@@ -37,7 +37,7 @@ export const products = [
     name: "Mixed Bundle",
     price: 210000,
     pieces: 24,
-    image: "/images/bundle-3.jpg",
+    image: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=600&auto=format&fit=crop",
     available: 21,
     features: [
       "Assorted items",

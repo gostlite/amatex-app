@@ -28,8 +28,8 @@ export default function Cart() {
             <div className="border-t border-b border-gray-200 divide-y divide-gray-200 bg-white">
               {cartItems.map((item, itemIdx) => (
                 <div key={item.product.id} className="flex py-6 sm:py-8 px-4 sm:px-6">
-                  <div className="flex-shrink-0 w-24 h-32 sm:w-32 sm:h-40 bg-gray-100 flex items-center justify-center border border-gray-100">
-                     <span className="text-gray-400 font-bold tracking-widest text-[10px] uppercase text-center">[ IMG ]</span>
+                  <div className="flex-shrink-0 w-24 h-32 sm:w-32 sm:h-40 bg-gray-100 flex items-center justify-center border border-gray-100 relative overflow-hidden">
+                     <img src={item.product.image} className="absolute inset-0 w-full h-full object-cover" alt={item.product.name} />
                   </div>
                   
                   <div className="ml-4 sm:ml-6 flex-1 flex flex-col justify-between">

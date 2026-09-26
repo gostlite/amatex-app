@@ -1,6 +1,6 @@
 export default function WhyAmatex() {
   const points = [
-    { title: "Wholesale Pricing", description: "Best margins in the market for your business." },
+    { title: "Wholesale Pricing", description: "Highly competitive margins for your business." },
     { title: "Quality Fashion", description: "Curated selection of high-quality fashion items." },
     { title: "Nationwide Delivery", description: "Fast and reliable shipping across Nigeria." },
     { title: "Reseller Support", description: "Dedicated support team to help you grow." }
