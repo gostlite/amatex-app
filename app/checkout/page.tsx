@@ -1,8 +1,54 @@
+"use client";
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Checkout() {
+  const { cart, cartTotal, clearCart } = useCart();
+  const [mounted, setMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const delivery = cartTotal > 0 ? 15000 : 0;
+  const total = cartTotal + delivery;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      clearCart();
+      router.push('/order-confirmation');
+    }, 1500);
+  };
+
+  if (!mounted) return <div className="min-h-screen bg-gray-50 pt-20" />;
+
+  if (cart.length === 0) {
+    return (
+      <main className="min-h-screen bg-gray-50 font-sans pt-20">
+        <Navbar />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+          <h1 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-gray-900 mb-6">Checkout</h1>
+          <p className="text-gray-500 mb-8">Your cart is empty.</p>
+          <Link href="/shop" className="inline-block bg-black text-white px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">
+            Return to Shop
+          </Link>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-gray-50 font-sans selection:bg-black selection:text-white pt-20">
       <Navbar />
@@ -24,31 +70,31 @@ export default function Checkout() {
                 Delivery Details
               </h2>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
                   <div>
                     <label htmlFor="first-name" className="block text-xs font-bold uppercase tracking-widest text-gray-700 mb-2">First name</label>
-                    <input type="text" id="first-name" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
+                    <input required type="text" id="first-name" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
                   </div>
 
                   <div>
                     <label htmlFor="last-name" className="block text-xs font-bold uppercase tracking-widest text-gray-700 mb-2">Last name</label>
-                    <input type="text" id="last-name" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
+                    <input required type="text" id="last-name" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
                   </div>
 
                   <div className="sm:col-span-2">
                     <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-gray-700 mb-2">Email Address</label>
-                    <input type="email" id="email" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
+                    <input required type="email" id="email" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
                   </div>
 
                   <div className="sm:col-span-2">
                     <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-widest text-gray-700 mb-2">Phone number (WhatsApp active)</label>
-                    <input type="tel" id="phone" placeholder="+234" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
+                    <input required type="tel" id="phone" placeholder="+234" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
                   </div>
 
                   <div className="sm:col-span-2 mt-4 pt-4 border-t border-gray-100">
                     <label htmlFor="address" className="block text-xs font-bold uppercase tracking-widest text-gray-700 mb-2">Delivery address</label>
-                    <input type="text" id="address" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
+                    <input required type="text" id="address" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
                   </div>
 
                   <div>
@@ -65,7 +111,7 @@ export default function Checkout() {
                   
                   <div>
                     <label htmlFor="city" className="block text-xs font-bold uppercase tracking-widest text-gray-700 mb-2">City</label>
-                    <input type="text" id="city" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
+                    <input required type="text" id="city" className="block w-full border-gray-300 rounded-none shadow-sm focus:ring-black focus:border-black sm:text-sm px-4 py-3 border bg-gray-50 focus:bg-white transition-colors" />
                   </div>
                 </div>
 
@@ -91,8 +137,8 @@ export default function Checkout() {
                 </div>
 
                 <div className="mt-8 pt-6">
-                  <button type="button" className="w-full bg-black text-white px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">
-                    Pay ₦1,395,000 & Place Order
+                  <button disabled={isSubmitting} type="submit" className="w-full bg-black text-white px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors disabled:opacity-50">
+                    {isSubmitting ? 'Processing...' : `Pay ₦${total.toLocaleString()} & Place Order`}
                   </button>
                   <p className="text-center text-xs text-gray-500 mt-4 flex items-center justify-center">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
@@ -109,42 +155,34 @@ export default function Checkout() {
                 <h2 className="text-lg font-black uppercase tracking-tight text-gray-900 mb-6 border-b border-gray-200 pb-4">Order Summary</h2>
                 
                 <ul className="divide-y divide-gray-200 mb-6">
-                   <li className="py-4 flex">
-                      <div className="w-16 h-20 bg-gray-200 border border-gray-300 flex-shrink-0 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Ladies Mixed Bundle" />
-                      </div>
-                      <div className="ml-4 flex-1 flex flex-col justify-center">
-                         <h3 className="text-sm font-bold uppercase tracking-tight text-gray-900">Ladies Mixed Bundle</h3>
-                         <p className="text-xs text-gray-500 mt-1">Qty: 5</p>
-                         <p className="text-sm font-bold text-gray-900 mt-1">₦900,000</p>
-                      </div>
-                   </li>
-                   <li className="py-4 flex">
-                      <div className="w-16 h-20 bg-gray-200 border border-gray-300 flex-shrink-0 relative overflow-hidden">
-                         <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=600&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Men's Bundle" />
-                      </div>
-                      <div className="ml-4 flex-1 flex flex-col justify-center">
-                         <h3 className="text-sm font-bold uppercase tracking-tight text-gray-900">Men's Bundle</h3>
-                         <p className="text-xs text-gray-500 mt-1">Qty: 2</p>
-                         <p className="text-sm font-bold text-gray-900 mt-1">₦480,000</p>
-                      </div>
-                   </li>
+                   {cart.map(item => (
+                     <li key={item.id} className="py-4 flex">
+                        <div className="w-16 h-20 bg-gray-200 border border-gray-300 flex-shrink-0 relative overflow-hidden">
+                          <img src={item.image} className="absolute inset-0 w-full h-full object-cover" alt={item.name} />
+                        </div>
+                        <div className="ml-4 flex-1 flex flex-col justify-center">
+                           <h3 className="text-sm font-bold uppercase tracking-tight text-gray-900">{item.name}</h3>
+                           <p className="text-xs text-gray-500 mt-1">Qty: {item.quantity}</p>
+                           <p className="text-sm font-bold text-gray-900 mt-1">₦{(item.price * item.quantity).toLocaleString()}</p>
+                        </div>
+                     </li>
+                   ))}
                 </ul>
 
                 <dl className="space-y-3 text-sm text-gray-600 mb-2 border-t border-gray-200 pt-6">
                   <div className="flex justify-between">
                     <dt>Subtotal</dt>
-                    <dd className="font-bold text-gray-900">₦1,380,000</dd>
+                    <dd className="font-bold text-gray-900">₦{cartTotal.toLocaleString()}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Delivery</dt>
-                    <dd className="font-bold text-gray-900">₦15,000</dd>
+                    <dd className="font-bold text-gray-900">₦{delivery.toLocaleString()}</dd>
                   </div>
                 </dl>
                 
                 <div className="flex justify-between border-t border-gray-300 mt-4 pt-4 text-lg">
                   <dt className="font-black uppercase tracking-tight text-gray-900">Total</dt>
-                  <dd className="font-black text-gray-900">₦1,395,000</dd>
+                  <dd className="font-black text-gray-900">₦{total.toLocaleString()}</dd>
                 </div>
              </div>
           </div>

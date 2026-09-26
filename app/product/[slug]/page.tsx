@@ -3,9 +3,17 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { products } from '@/data/products';
 import Link from 'next/link';
+import ProductActions from '@/components/ProductActions';
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = products.find((p) => p.slug === params.slug);
+export function generateStaticParams() {
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
@@ -67,25 +75,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <p className="font-medium text-black">₦{pricePerPiece.toLocaleString()} per piece average cost.</p>
             </div>
             
-            <div className="border-t border-gray-100 py-8">
-               <div className="flex items-center space-x-6 mb-6">
-                 <div className="flex items-center border border-gray-300">
-                   <button className="px-4 py-3 text-gray-500 hover:text-black hover:bg-gray-50 transition-colors">-</button>
-                   <span className="px-4 py-3 font-bold">1</span>
-                   <button className="px-4 py-3 text-gray-500 hover:text-black hover:bg-gray-50 transition-colors">+</button>
-                 </div>
-                 <p className="text-sm text-gray-500">{product.available} available</p>
-               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/cart" className="w-full sm:flex-1 bg-black text-white px-8 py-4 text-center text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">
-                  Add to Cart
-                </Link>
-                <a href="https://wa.me/2340000000000" className="w-full sm:flex-1 bg-white border border-black text-black px-8 py-4 text-center text-xs font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors flex items-center justify-center">
-                  Order via WhatsApp
-                </a>
-              </div>
-            </div>
+            <ProductActions product={product} />
 
             {/* Accordion Details */}
             <div className="border-t border-gray-100 divide-y divide-gray-100 mt-4">
