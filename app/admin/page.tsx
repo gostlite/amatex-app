@@ -1,9 +1,9 @@
 export default function AdminDashboard() {
   const recentOrders = [
-    { id: '#AMX-1042', product: 'Ladies Mixed Bundle', amount: '₦180,000', status: 'PAID' },
-    { id: '#AMX-1041', product: "Men's Bundle", amount: '₦120,000', status: 'PENDING' },
-    { id: '#AMX-1040', product: 'Mixed Bundle', amount: '₦210,000', status: 'PAID' },
-    { id: '#AMX-1039', product: 'Ladies Mixed Bundle', amount: '₦360,000', status: 'SHIPPED' },
+    { id: '#QTV-1042', product: 'Ladies Mixed Bundle', amount: '₦180,000', status: 'PAID' },
+    { id: '#QTV-1041', product: "Men's Bundle", amount: '₦120,000', status: 'PENDING' },
+    { id: '#QTV-1040', product: 'Mixed Bundle', amount: '₦210,000', status: 'PAID' },
+    { id: '#QTV-1039', product: 'Ladies Mixed Bundle', amount: '₦360,000', status: 'SHIPPED' },
   ];
 
   return (

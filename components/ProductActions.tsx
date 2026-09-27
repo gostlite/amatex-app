@@ -28,7 +28,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
         <AddToCartButton product={product} quantity={quantity} />
         
         <a 
-          href={`https://wa.me/2340000000000?text=${encodeURIComponent(`Hello Amatex, I would like to order ${quantity} × ${product.name} (${product.pieces} pieces) for ₦${(product.price * quantity).toLocaleString()}.`)}`} 
+          href={`https://wa.me/2340000000000?text=${encodeURIComponent(`Hello Quantiv, I would like to order ${quantity} × ${product.name} (${product.pieces} pieces) for ₦${(product.price * quantity).toLocaleString()}.`)}`} 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-full sm:flex-1 bg-white border border-black text-black px-8 py-4 text-center text-xs font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors flex items-center justify-center"

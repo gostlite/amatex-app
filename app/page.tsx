@@ -4,7 +4,7 @@ import TrustBar from '@/components/TrustBar';
 import ShopByCategory from '@/components/ShopByCategory';
 import ProductGrid from '@/components/ProductGrid';
 import HowItWorks from '@/components/HowItWorks';
-import WhyAmatex from '@/components/WhyAmatex';
+import WhyUs from '@/components/WhyUs';
 import ResellerCTA from '@/components/ResellerCTA';
 import Footer from '@/components/Footer';
 
@@ -17,7 +17,7 @@ export default function Home() {
       <ShopByCategory />
       <ProductGrid />
       <HowItWorks />
-      <WhyAmatex />
+      <WhyUs />
       <ResellerCTA />
       <Footer />
     </main>

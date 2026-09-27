@@ -43,7 +43,7 @@ export default function Hero() {
                 ))}
              </div>
              <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">
-               Trusted by <span className="text-black">10,000+</span> Resellers
+               Trusted by <span className="text-black">Top</span> Resellers
              </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 export default function TrustBar() {
   const items = [
-    "10,000+ Resellers",
+    "Trusted by Resellers",
     "Nationwide Delivery",
     "Wholesale Pricing",
     "Secure Ordering"

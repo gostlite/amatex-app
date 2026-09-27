@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function OrderConfirmation() {
   // Generate random order number
-  const orderNumber = `AMX-${Math.floor(1000 + Math.random() * 9000)}`;
+  const orderNumber = `QTV-${Math.floor(1000 + Math.random() * 9000)}`;
 
   return (
     <main className="min-h-screen bg-gray-50 font-sans selection:bg-black selection:text-white pt-20">
@@ -35,7 +35,7 @@ export default function OrderConfirmation() {
           <Link href="/shop" className="bg-black text-white px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">
             Continue Shopping
           </Link>
-          <a href={`https://wa.me/2340000000000?text=${encodeURIComponent(`Hello Amatex, I just placed order #${orderNumber} and wanted to confirm.`)}`} className="bg-white border border-black text-black px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors">
+          <a href={`https://wa.me/2340000000000?text=${encodeURIComponent(`Hello Quantiv, I just placed order #${orderNumber} and wanted to confirm.`)}`} className="bg-white border border-black text-black px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors">
             Chat on WhatsApp
           </a>
         </div>

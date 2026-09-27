@@ -1,4 +1,4 @@
-export default function WhyAmatex() {
+export default function WhyUs() {
   const points = [
     { title: "Wholesale Pricing", description: "Highly competitive margins for your business." },
     { title: "Quality Fashion", description: "Curated selection of high-quality fashion items." },
@@ -7,14 +7,14 @@ export default function WhyAmatex() {
   ];
 
   return (
-    <section id="why-amatex" className="py-24 bg-black text-white">
+    <section id="why-us" className="py-24 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">
-            Why Resellers Choose Amatex
+            Why Resellers Choose Quantiv
           </h2>
           <p className="text-lg text-gray-400">
-            We empower over 10,000 resellers with the right products at the right prices.
+            We empower resellers with the right products at the right prices.
           </p>
         </div>
 

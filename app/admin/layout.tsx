@@ -7,7 +7,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <aside className="w-full md:w-64 bg-black text-white flex-shrink-0">
         <div className="p-6 border-b border-gray-800">
           <Link href="/" className="text-xl font-black uppercase tracking-tighter">
-            Amatex Admin
+            Quantiv Admin
           </Link>
         </div>
         <nav className="p-4 space-y-2">

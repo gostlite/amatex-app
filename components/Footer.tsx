@@ -8,7 +8,7 @@ export default function Footer() {
           
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="text-2xl font-black tracking-tighter text-gray-900 uppercase mb-6 inline-block">
-              AMATEX
+              QUANTIV
             </Link>
             <p className="text-gray-500 max-w-xs">
               Quality clothing bundles for retailers and resellers across Nigeria. Wholesale fashion made easy.
@@ -44,10 +44,10 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/amatexclothingempire" className="hover:text-black transition-colors">Instagram</a>
+                <a href="#" className="hover:text-black transition-colors">Instagram</a>
               </li>
               <li>
-                <a href="https://tiktok.com/@amatexclothingempire" className="hover:text-black transition-colors">TikTok</a>
+                <a href="#" className="hover:text-black transition-colors">TikTok</a>
               </li>
               <li>
                  <a href="#" className="hover:text-black transition-colors">Facebook</a>
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-16 pt-8 border-t border-gray-100 text-gray-400 flex flex-col md:flex-row justify-between items-center text-xs uppercase tracking-widest">
-          <p>&copy; {new Date().getFullYear()} Amatex Clothing Empire. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Quantiv Store Demo. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-black transition-colors">Terms of Service</Link>

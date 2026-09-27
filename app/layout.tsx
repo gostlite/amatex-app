@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 import { CartProvider } from '@/context/CartContext';
 
 export const metadata: Metadata = {
-  title: "Amatex Clothing Empire - Wholesale Fashion",
+  title: "Quantiv - Online Store Demo",
   description: "Wholesale fashion for Nigerian resellers.",
 };
 

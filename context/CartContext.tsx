@@ -29,7 +29,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const savedCart = localStorage.getItem('amatex_cart');
+    const savedCart = localStorage.getItem('quantiv_cart');
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
@@ -42,7 +42,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (isLoaded) {
-      localStorage.setItem('amatex_cart', JSON.stringify(cart));
+      localStorage.setItem('quantiv_cart', JSON.stringify(cart));
     }
   }, [cart, isLoaded]);
 
