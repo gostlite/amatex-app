@@ -39,7 +39,7 @@ export default function Footer() {
             <ul className="space-y-4 text-gray-500">
               <li>Lagos, Nigeria</li>
               <li>
-                <a href="https://wa.me/2340000000000" className="hover:text-black transition-colors flex items-center">
+                <a href="https://wa.me/2349079472099" className="hover:text-black transition-colors flex items-center">
                   Order via WhatsApp
                 </a>
               </li>

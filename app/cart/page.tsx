@@ -112,7 +112,7 @@ export default function Cart() {
                 </Link>
                 
                 <a 
-                  href={`https://wa.me/2340000000000?text=${encodeURIComponent(`Hello Quantiv, I have a cart of ₦${(cartTotal + delivery).toLocaleString()} that I would like to order.`)}`} 
+                  href={`https://wa.me/2349079472099?text=${encodeURIComponent(`Hello Quantiv, I have a cart of ₦${(cartTotal + delivery).toLocaleString()} that I would like to order.`)}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block w-full bg-transparent border border-black text-black px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors"

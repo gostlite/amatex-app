@@ -35,7 +35,7 @@ export default function OrderConfirmation() {
           <Link href="/shop" className="bg-black text-white px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">
             Continue Shopping
           </Link>
-          <a href={`https://wa.me/2340000000000?text=${encodeURIComponent(`Hello Quantiv, I just placed order #${orderNumber} and wanted to confirm.`)}`} className="bg-white border border-black text-black px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors">
+          <a href={`https://wa.me/2349079472099?text=${encodeURIComponent(`Hello Quantiv, I just placed order #${orderNumber} and wanted to confirm.`)}`} className="bg-white border border-black text-black px-8 py-4 text-center text-sm font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors">
             Chat on WhatsApp
           </a>
         </div>

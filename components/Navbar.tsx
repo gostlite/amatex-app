@@ -87,7 +87,7 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center space-x-4 md:space-x-6 justify-end flex-none">
-             <a href="https://wa.me/2340000000000" target="_blank" rel="noopener noreferrer" className="hidden lg:flex items-center text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors uppercase tracking-widest">
+             <a href="https://wa.me/2349079472099" target="_blank" rel="noopener noreferrer" className="hidden lg:flex items-center text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors uppercase tracking-widest">
                 WhatsApp
             </a>
             <Link href="/cart" className="text-gray-900 hover:text-gray-500 transition-colors flex items-center group relative p-2 -mr-2">
@@ -107,7 +107,7 @@ export default function Navbar() {
           <Link href="/shop?category=bundles" className="block px-3 py-4 text-base font-medium text-gray-900 border-b border-gray-50 uppercase tracking-widest">Collections</Link>
           <Link href="/#how-it-works" className="block px-3 py-4 text-base font-medium text-gray-900 border-b border-gray-50 uppercase tracking-widest">How It Works</Link>
           <Link href="/#resellers" className="block px-3 py-4 text-base font-medium text-gray-900 border-b border-gray-50 uppercase tracking-widest">Become a Reseller</Link>
-          <a href="https://wa.me/2340000000000" className="block px-3 py-4 text-base font-medium text-gray-900 uppercase tracking-widest">Contact via WhatsApp</a>
+          <a href="https://wa.me/2349079472099" className="block px-3 py-4 text-base font-medium text-gray-900 uppercase tracking-widest">Contact via WhatsApp</a>
         </div>
       </div>
     </header>

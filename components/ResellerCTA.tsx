@@ -27,7 +27,7 @@ export default function ResellerCTA() {
               Shop Wholesale
             </Link>
             <a 
-              href="https://wa.me/2340000000000" 
+              href="https://wa.me/2349079472099" 
               className="w-full px-8 py-5 bg-white border border-black text-black text-xs font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors text-center"
             >
               Chat on WhatsApp
